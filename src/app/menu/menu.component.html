@@ -11,7 +11,7 @@
 
     <div fxFlex>
       <md-grid-list cols="2" rowHeight="200px">
-        <md-grid-tile *ngFor="let dish of dishes">
+        <md-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
           <img height="200px" src={{dish.image}} alt={{dish.name}}>
         <md-grid-tile-footer>
             <h1 md-line>{{dish.name | uppercase}}</h1>
@@ -34,7 +34,7 @@
           <button md-button>LIKE</button>
           <button md-button>SHARE</button>
         </md-card-actions>
-
       </md-card>
     </div>
+    <app-dishdetail [dish]="selectedDetail"></app-dishdetail>
 </div>
